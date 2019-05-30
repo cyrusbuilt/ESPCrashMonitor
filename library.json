@@ -1,0 +1,22 @@
+{
+    "name": "ESPCrashMonitor",
+    "keywords": "crash, monitor, espressif, esp, esp8266, watchdog, reset",
+    "description": "A crash monitor class that implements the ESP8266's built-in watchdog and provides debug information about crashes.",
+    "authors": [
+        {
+            "name": "Cyrus Brunner",
+            "email": "cyrusbuilt@gmail.com",
+            "url": "http://cyrusbuilt.net",
+            "maintainer": true
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cyrusbuilt/ESPCrashMonitor.git"
+    },
+    "version": "1.0.0",
+    "license": "GPL-3.0",
+    "downloadUrl": "https://github.com/cyrusbuilt/ESPCrashMonitor/archive/master.zip",
+    "frameworks": "arduino",
+    "platforms": "*"
+}

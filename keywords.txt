@@ -1,0 +1,35 @@
+#######################################
+# Syntax Coloring Map for ESPCrashMonitor
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+bootflags_t KEYWORD1
+ETimeout
+ESPCrashMonitorClass    KEYWORD1
+ESPCrashMonitor
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+detectBootMode  KEYWORD2
+dump    KEYWORD2
+enableWatchdog  KEYWORD2
+disableWatchdog KEYWORD2
+defer   KEYWORD2
+iAmAlive    KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+Timeout_15ms    LITERAL1
+Timeout_30ms    LITERAL1
+Timeout_60ms    LITERAL1
+Timeout_120ms   LITERAL1
+Timeout_250ms   LITERAL1
+Timeout_500ms   LITERAL1
+Timeout_1s  LITERAL1
+Timeout_2s  LITERAL1
+Timeout_4s  LITERAL1
+Timeout_8s  LITERAL1
