@@ -1,3 +1,13 @@
+/**
+ * ESPCrashMonitor.h
+ * Version 1.0.0
+ * Author
+ *      Cyrus Brunner <cyrusbuilt@gmail.com>
+ * 
+ * This library provides a means of monitoring for and capturing debug data
+ * related to firmware crashes and hardware resets.
+ */
+
 #ifndef ESPCrashMonitor_h
 #define ESPCrashMonitor_h
 
