@@ -1,6 +1,6 @@
 /**
  * ESPCrashMonitor.cpp
- * Version 1.0.0
+ * Version 1.0.1
  * Author
  *      Cyrus Brunner <cyrusbuilt@gmail.com>
  * 
@@ -18,6 +18,8 @@ ESPCrashMonitorClass::ESPCrashMonitorClass() {
 struct bootflags_t ESPCrashMonitorClass::detectBootMode() {
     int resetReason;
     int bootMode;
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wuninitialized"
     asm (
         "movi %0, 0x60000600\n\t"
         "movi %1, 0x60000200\n\t"
@@ -32,6 +34,7 @@ struct bootflags_t ESPCrashMonitorClass::detectBootMode() {
     flags.rawRstCause = (resetReason & 0xF);
     flags.rawBootDevice = ((bootMode >> 0x10) & 0x7);
     flags.rawBootMode = ((bootMode >> 0x1D) & 0x7);
+    #pragma GCC diagnostic pop
     flags.rstNormalBoot = flags.rawRstCause == 0x1;
     flags.rstResetPin = flags.rawRstCause == 0x2;
     flags.rstWatchdog = flags.rawRstCause == 0x4;

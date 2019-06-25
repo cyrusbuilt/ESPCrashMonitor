@@ -14,7 +14,7 @@
         "type": "git",
         "url": "https://github.com/cyrusbuilt/ESPCrashMonitor.git"
     },
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "GPL-3.0",
     "downloadUrl": "https://github.com/cyrusbuilt/ESPCrashMonitor/archive/master.zip",
     "frameworks": "arduino",
