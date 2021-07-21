@@ -70,3 +70,6 @@ $RECYCLE.BIN/
 
 # VSCode stuff
 .vscode
+
+# Compiled documentation
+docs/

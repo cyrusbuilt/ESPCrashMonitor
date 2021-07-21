@@ -14,9 +14,19 @@
         "type": "git",
         "url": "https://github.com/cyrusbuilt/ESPCrashMonitor.git"
     },
-    "version": "1.0.1",
+    "version": "1.0.2",
     "license": "GPL-3.0",
-    "downloadUrl": "https://github.com/cyrusbuilt/ESPCrashMonitor/archive/master.zip",
     "frameworks": "arduino",
-    "platforms": "*"
+    "platforms": ["espressif8266"],
+    "examples": [
+        {
+            "name": "ESPCrashMonitorExample",
+            "base": "examples/ESPCrashMonitorExample",
+            "files": [
+                "ESPCrashMonitor.ino",
+                "include/ESPCrashMonitor.h",
+                "src/ESPCrashMonitor.cpp"
+            ]
+        }
+    ]
 }
