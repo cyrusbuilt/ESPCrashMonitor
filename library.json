@@ -22,11 +22,7 @@
         {
             "name": "ESPCrashMonitorExample",
             "base": "examples/ESPCrashMonitorExample",
-            "files": [
-                "ESPCrashMonitorExample.ino",
-                "include/ESPCrashMonitor.h",
-                "src/ESPCrashMonitor.cpp"
-            ]
+            "files": ["ESPCrashMonitorExample.ino"]
         }
     ]
 }
