@@ -1,6 +1,6 @@
 /**
  * ESPCrashMonitor.h
- * Version 1.0.2
+ * Version 1.0.3
  * Author
  *      Cyrus Brunner <cyrusbuilt@gmail.com>
  * 
@@ -21,6 +21,9 @@ extern "C" {
     #include "user_interface.h"
 }
 
+/**
+ * @brief Device boot flags.
+ */
 struct bootflags_t
 {
     unsigned char rawRstCause : 4;
@@ -33,11 +36,15 @@ struct bootflags_t
     unsigned char bootDeviceFlash : 1;
 };
 
+/**
+ * @brief Allows control of the watchdog and provides a means to get the reason
+ * for a previous crash.
+ */
 class ESPCrashMonitorClass
 {
     public:
         /**
-        * Possible timeout values.
+        * @brief Possible timeout values.
         */
         enum ETimeout
         {
@@ -58,23 +65,24 @@ class ESPCrashMonitorClass
         };
 
         /**
-         * Default ctor.
+         * @brief Default ctor.
          */
         ESPCrashMonitorClass();
 
         /**
-         * Detects the boot mode and gathers boot-specific information.
+         * @brief Detects the boot mode and gathers boot-specific information.
          * @returns bootflags_t The boot information struct.
          */
         struct bootflags_t detectBootMode();
 
         /**
-         * Dumps the debug information about the reset cause and boot.
+         * @brief Dumps the debug information about the reset cause and boot.
+         * @param destination The stream (usually Serial) to dump the info to.
          */
         void dump(Print &destination);
 
         /**
-         * Enables the watchdog which will determine if the sketch is unresponsive
+         * @brief Enables the watchdog which will determine if the sketch is unresponsive
          * by waiting for the 'alive' signal within the given timeout period.
          * @param timeout The timeout period to wait for the alive signal. NOTE:
          * At this time, the Arduino framework for ESP does not actually support
@@ -88,12 +96,12 @@ class ESPCrashMonitorClass
         void enableWatchdog(ETimeout timeout);
 
         /**
-         * Disables the watchdog.
+         * @brief Disables the watchdog.
          */
         void disableWatchdog();
 
         /**
-         * Defers the watchdog until the caller returns. This has the same
+         * @brief Defers the watchdog until the caller returns. This has the same
          * effect as calling yield() or delay(0). It just temporarily
          * suspends the watchdog to give the caller some extra processing
          * time without tripping the watchdog.
@@ -101,11 +109,14 @@ class ESPCrashMonitorClass
         void defer();
 
         /**
-         * Notifies the watchdog that the program is still alive and not hung.
+         * @brief Notifies the watchdog that the program is still alive and not hung.
          * This should be called from your sketch's loop() method.
          */
         void iAmAlive();
 };
 
+/**
+ * @brief Global instance of ESPCrashMonitor.
+ */
 extern ESPCrashMonitorClass ESPCrashMonitor;
 #endif

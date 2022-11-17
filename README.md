@@ -1,7 +1,7 @@
 # ESPCrashMonitor
 Arduino crash monitor library for the ESP8266.
 
-[![Build Status](https://travis-ci.com/cyrusbuilt/ESPCrashMonitor.svg?branch=master)](https://travis-ci.com/cyrusbuilt/ESPCrashMonitor)
+![Build Status](https://github.com/cyrusbuilt/ESPCrashMonitor/actions/workflows/ci.yml/badge.svg)
 
 ## Description
 
